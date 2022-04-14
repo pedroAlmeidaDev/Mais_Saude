@@ -8,13 +8,13 @@ public class Pessoa {
     private String nome;
     private Integer idade;
     private Double altura;
-    private Integer peso;
+    private Double peso;
     private Double imc;
 
     public Pessoa() {
     }
 
-    public Pessoa(String nome, Integer idade, Double altura, Integer peso, Double imc) {
+    public Pessoa(String nome, Integer idade, Double altura, Double peso, Double imc) {
         this.nome = nome;
         this.idade = idade;
         this.altura = altura;
@@ -54,11 +54,11 @@ public class Pessoa {
         this.altura = altura;
     }
 
-    public Integer getPeso() {
+    public Double getPeso() {
         return peso;
     }
 
-    public void setPeso(Integer peso) {
+    public void setPeso(Double peso) {
         this.peso = peso;
     }
 
@@ -66,16 +66,9 @@ public class Pessoa {
         return imc;
     }
 
-    public void setImc(Double imc) {
-        this.imc = imc;
-    }
     
-    public Double calcImc(double altura, int peso){
-        
-        imc = peso / (altura * altura);
-       
-        return imc ;
-       
+    public void calcImc(Double peso, Double altura){
+        imc += peso / (altura * altura);
     }
-    
+
 }
