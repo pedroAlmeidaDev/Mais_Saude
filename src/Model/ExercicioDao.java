@@ -58,13 +58,14 @@ public class ExercicioDao {
     
     public void alterar(Exercicio ex) {
 		con = Conexao.conectaBanco();
-		sql = "update exercicio set nome = ?, partcorpo = ?, repet = ?; serie = ?;";
+		sql = "update exercicio set nome = ?, partcorpo = ?, repet = ?; serie = ? where id=?;";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, ex.getNome());
 			ps.setString(2, ex.getPartCorpo());
                         ps.setInt(3, ex.getRepet());
                         ps.setInt(4, ex.getSerie());
+                        ps.setInt(5, ex.getId());
 			ps.execute();
 			JOptionPane.showMessageDialog(null, "Alterado com Sucesso!!");
 		}catch (HeadlessException | SQLException e) {

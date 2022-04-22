@@ -28,7 +28,7 @@ public class PessoaDao {
 			ps.setInt(2, p.getIdade());
                         ps.setDouble(3, p.getAltura());
                         ps.setInt(4, p.getPeso());
-                        ps.setInt(5, p.getImc());
+                        ps.setDouble(5, p.getImc());
 			ps.execute();
 			JOptionPane.showMessageDialog(null, "Salvo com Sucesso!!");
 		}catch (HeadlessException | SQLException erro) {
@@ -52,7 +52,7 @@ public class PessoaDao {
                                 pessoa.setIdade(rs.getInt("idade"));
                                 pessoa.setAltura(rs.getDouble("altura"));
                                 pessoa.setPeso(rs.getInt("peso"));
-                                pessoa.setImc(rs.getInt("imc"));
+                                pessoa.setImc(rs.getDouble("imc"));
 			}
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "Erro ao Listar !!");
@@ -73,7 +73,7 @@ public class PessoaDao {
             pessoa.setIdade(rs.getInt("idade"));
             pessoa.setAltura(rs.getDouble("altura"));
             pessoa.setPeso(rs.getInt("peso"));
-            pessoa.setImc(rs.getInt("imc"));
+            pessoa.setImc(rs.getDouble("imc"));
             pessoas.add(pessoa);
         }
         return pessoas;
@@ -89,7 +89,7 @@ public class PessoaDao {
 			ps.setInt(2, p.getIdade());
                         ps.setDouble(3, p.getAltura());
                         ps.setInt(4, p.getPeso());
-                        ps.setInt(5, p.getImc());
+                        ps.setDouble(5, p.getImc());
                         ps.setInt(6, p.getId());
 			ps.execute();
 			JOptionPane.showMessageDialog(null, "Alterado com Sucesso!!");

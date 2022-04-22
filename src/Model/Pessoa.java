@@ -9,12 +9,12 @@ public class Pessoa {
     private Integer idade;
     private Double altura;
     private Integer peso;
-    private Integer imc;
+    private Double imc;
 
     public Pessoa() {
     }
 
-    public Pessoa(String nome, Integer idade, Double altura, Integer peso, Integer imc) {
+    public Pessoa(String nome, Integer idade, Double altura, Integer peso, Double imc) {
         this.nome = nome;
         this.idade = idade;
         this.altura = altura;
@@ -62,11 +62,11 @@ public class Pessoa {
         this.peso = peso;
     }
     
-    public Integer getImc(){
+    public Double getImc(){
         return imc;
     }
 
-    public void setImc(Integer imc){
+    public void setImc(Double imc){
         this.imc = imc;
     }
 
